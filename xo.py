@@ -1,4 +1,4 @@
-class Number:
+class Token:
     def __init__(self, x=0, y=0):
         self._number = 0
         self._posX = x

@@ -1,4 +1,4 @@
-from number import Number
+from xo import Token
 
 def boardSetup():
     print('''
@@ -15,7 +15,7 @@ def boardSetup():
     ''')
 
 def main():
-    num1 = Number()
+    num1 = Token()
     num1.setPos(10, 20)
     pos = num1.getPos()
     print(pos)
