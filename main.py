@@ -1,30 +1,35 @@
 from xo import Token
 
-def boardSetup():
-    print('''
+def board(tokens):
+    print(f'''
     ___________________
     |     |     |     |
+    |  {tokens[0]}  |  {tokens[1]}  |  {tokens[2]}  |
+    |_____|_____|_____|
     |     |     |     |
-    |___ _|_____|_____|
+    |  {tokens[3]}  |  {tokens[4]}  |  {tokens[5]}  |
+    |_____|_____|_____|
     |     |     |     |
-    |     |     |     |
-    |___ _|_____|_____|
-    |     |     |     |
-    |     |     |     |
-    |___ _|_____|_____|
+    |  {tokens[6]}  |  {tokens[7]}  |  {tokens[8]}  |
+    |_____|_____|_____|
     ''')
 
+def playGame(positions):
+    p1Turn = True
+    while p1Turn:
+        position = tuple(input("Player 1, enter your coordinates in the format 'x, y': ").split(', '))
+        for val in position:
+            val = int(val)
+        positions['x'] = position
+        print(position)
+        print(positions)
+
+
 def main():
-    num1 = Token()
-    num1.setPos(10, 20)
-    pos = num1.getPos()
-    print(pos)
-    numbers=[]
-    for i in range(10):
-        newNum = Number(i, i)
-        numbers.append(newNum)
-    for number in numbers:
-        print(number)
+    tokens = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
+    positions = {}
+    board(tokens)
+    playGame(positions)
 
 
 if __name__ == '__main__':
