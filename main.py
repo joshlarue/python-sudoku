@@ -1,6 +1,12 @@
 from xo import Token
 
 def board(tokens):
+    """
+    Function prints tic-tac-toe board with the correct token (x or o)
+
+    Inputs: tokens list
+    Returns: prints board
+    """
     print(f'''
     ___________________
     |     |     |     |
@@ -15,6 +21,12 @@ def board(tokens):
     ''')
 
 def playGame(positions):
+    """
+    Plays one round of tic-tac-toe
+
+    Input: positions list (sets of coordinates)
+    Returns: updated positions list to pass into the board() function
+    """
     p1Turn = True
     while p1Turn:
         position = tuple(input("Player 1, enter your coordinates in the format 'x, y': ").split(', '))
